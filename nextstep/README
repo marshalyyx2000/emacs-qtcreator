@@ -1,0 +1,4 @@
+This directory contains files needed to build Emacs on Nextstep-based
+platforms, including GNUstep and Mac OS X (using the Cocoa libraries).
+
+See the INSTALL file in this directory for compilation instructions.

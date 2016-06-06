@@ -1,0 +1,85 @@
+-*- mode: compilation; default-directory: "~/emacs-master/" -*-
+Compilation started at Mon May 30 15:14:01
+
+make clean
+make -C src clean
+make[1]: Entering directory `/home/marshal/emacs-master/src'
+rm -f temacs core *.core \#* *.o
+rm -f ../etc/DOC
+rm -f bootstrap-emacs emacs-25.1.50
+rm -f buildobj.h
+rm -f globals.h gl-stamp
+rm -f *.res *.tmp
+rm -f emacs-*.*.* emacs
+rm -rf deps
+make[1]: Leaving directory `/home/marshal/emacs-master/src'
+make -C oldXMenu clean
+make[1]: Entering directory `/home/marshal/emacs-master/oldXMenu'
+rm -f libXMenu11.a *.o
+rm -rf deps
+make[1]: Leaving directory `/home/marshal/emacs-master/oldXMenu'
+make -C lwlib clean
+make[1]: Entering directory `/home/marshal/emacs-master/lwlib'
+rm -f *.o liblw.a \#*
+rm -rf deps
+make[1]: Leaving directory `/home/marshal/emacs-master/lwlib'
+make -C lib clean
+make[1]: Entering directory `/home/marshal/emacs-master/lib'
+test -z "" || rm -f 
+test -z " libgnu.a " || rm -f  libgnu.a 
+rm -f *.o
+test -z " core *.stackdump alloca.h alloca.h-t byteswap.h byteswap.h-t dirent.h dirent.h-t errno.h errno.h-t execinfo.h execinfo.h-t fcntl.h fcntl.h-t getopt.h getopt.h-t inttypes.h inttypes.h-t signal.h signal.h-t arg-nonnull.h arg-nonnull.h-t c++defs.h c++defs.h-t warn-on-use.h warn-on-use.h-t stdalign.h stdalign.h-t stddef.h stddef.h-t stdint.h stdint.h-t stdio.h stdio.h-t stdlib.h stdlib.h-t string.h string.h-t sys/select.h sys/select.h-t sys/stat.h sys/stat.h-t sys/time.h sys/time.h-t sys/types.h sys/types.h-t time.h time.h-t unistd.h unistd.h-t libegnu.a" || rm -f  core *.stackdump alloca.h alloca.h-t byteswap.h byteswap.h-t dirent.h dirent.h-t errno.h errno.h-t execinfo.h execinfo.h-t fcntl.h fcntl.h-t getopt.h getopt.h-t inttypes.h inttypes.h-t signal.h signal.h-t arg-nonnull.h arg-nonnull.h-t c++defs.h c++defs.h-t warn-on-use.h warn-on-use.h-t stdalign.h stdalign.h-t stddef.h stddef.h-t stdint.h stdint.h-t stdio.h stdio.h-t stdlib.h stdlib.h-t string.h string.h-t sys/select.h sys/select.h-t sys/stat.h sys/stat.h-t sys/time.h sys/time.h-t sys/types.h sys/types.h-t time.h time.h-t unistd.h unistd.h-t libegnu.a
+rmdir sys
+make[1]: Leaving directory `/home/marshal/emacs-master/lib'
+make -C lib-src clean
+make[1]: Entering directory `/home/marshal/emacs-master/lib-src'
+rm -f core *.o *.res
+rm -f etags ctags emacsclient  ebrowse profile movemail hexl update-game-score make-docfile
+make[1]: Leaving directory `/home/marshal/emacs-master/lib-src'
+make -C nt clean
+make[1]: Entering directory `/home/marshal/emacs-master/nt'
+rm -f core *.o *.res
+rm -f runemacs addpm cmdproxy ddeclient 
+make[1]: Leaving directory `/home/marshal/emacs-master/nt'
+make -C doc/emacs clean
+make[1]: Entering directory `/home/marshal/emacs-master/doc/emacs'
+rm -f *.aux *.log *.toc *.cp *.cps *.fn *.fns *.ky *.kys \
+	  *.op *.ops *.pg *.pgs *.tp *.tps *.vr *.vrs
+rm -f emacs.dvi emacs-xtra.dvi emacs.html emacs.pdf emacs-xtra.pdf emacs.ps emacs-xtra.ps
+make[1]: Leaving directory `/home/marshal/emacs-master/doc/emacs'
+make -C doc/misc clean
+make[1]: Entering directory `/home/marshal/emacs-master/doc/misc'
+rm -f *.aux *.log *.toc *.c[mp] *.c[mp]s *.fn *.fns \
+	  *.ky *.kys *.op *.ops *.p[gj] *.p[gj]s *.sc *.scs *.ss \
+	  *.t[gp] *.t[gp]s *.vr *.vrs
+rm -f gnustmp*
+rm -f *.dvi *.html *.pdf *.ps
+make[1]: Leaving directory `/home/marshal/emacs-master/doc/misc'
+make -C doc/lispref clean
+make[1]: Entering directory `/home/marshal/emacs-master/doc/lispref'
+rm -f *.aux *.log *.toc *.cp *.cps *.fn *.fns *.ky *.kys \
+	  *.op *.ops *.pg *.pgs *.tp *.tps *.vr *.vrs
+rm -f elisp[12]* vol[12].tmp
+rm -f elisp.dvi elisp.html elisp.pdf elisp.ps
+rm -f vol[12].dvi vol[12].pdf vol[12].ps
+make[1]: Leaving directory `/home/marshal/emacs-master/doc/lispref'
+make -C doc/lispintro clean
+make[1]: Entering directory `/home/marshal/emacs-master/doc/lispintro'
+rm -f *.aux *.log *.toc *.cp *.cps *.fn *.fns *.ky *.kys \
+	  *.op *.ops *.pg *.pgs *.tp *.tps *.vr *.vrs
+rm -f emacs-lisp-intro.dvi emacs-lisp-intro.html emacs-lisp-intro.pdf emacs-lisp-intro.ps
+make[1]: Leaving directory `/home/marshal/emacs-master/doc/lispintro'
+make -C nextstep clean
+make[1]: Entering directory `/home/marshal/emacs-master/nextstep'
+rm -rf 
+make[1]: Leaving directory `/home/marshal/emacs-master/nextstep'
+for dir in test/automated admin/charsets; do \
+	  [ ! -d $dir ] || make -C $dir clean; \
+	done
+make[1]: Entering directory `/home/marshal/emacs-master/admin/charsets'
+rm -f jisx2131-filter
+make[1]: Leaving directory `/home/marshal/emacs-master/admin/charsets'
+rm -f *.tmp etc/*.tmp*
+rm -rf info-dir.*
+
+Compilation finished at Mon May 30 15:14:01
