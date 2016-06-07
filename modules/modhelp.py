@@ -124,6 +124,7 @@ def main():
                        help='override name of the default function')
     initp.set_defaults(func=cmd_init)
 
+
     args = mainp.parse_args()
     args.func(args)
 

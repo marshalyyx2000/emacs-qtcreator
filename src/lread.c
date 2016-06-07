@@ -959,10 +959,12 @@ required.
 This uses the variables `load-suffixes' and `load-file-rep-suffixes'.  */)
   (void)
 {
+    debug_print(Vload_suffixes);
   Lisp_Object lst = Qnil, suffixes = Vload_suffixes, suffix, ext;
   while (CONSP (suffixes))
     {
       Lisp_Object exts = Vload_file_rep_suffixes;
+      debug_print(exts);
       suffix = XCAR (suffixes);
       suffixes = XCDR (suffixes);
       while (CONSP (exts))

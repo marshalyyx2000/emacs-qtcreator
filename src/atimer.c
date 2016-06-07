@@ -25,6 +25,7 @@ along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.  */
 #include "atimer.h"
 #include <unistd.h>
 
+
 #ifdef HAVE_TIMERFD
 #include <errno.h>
 # include <sys/timerfd.h>

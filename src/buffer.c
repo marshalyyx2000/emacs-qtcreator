@@ -383,36 +383,39 @@ proper order for that frame: the buffers show in FRAME come first,
 followed by the rest of the buffers.  */)
   (Lisp_Object frame)
 {
-  Lisp_Object general;
-  general = Fmapcar (Qcdr, Vbuffer_alist);
+    debug_print(frame);
+    debug_print(Vbuffer_alist);
+    Lisp_Object general;
+    general = Fmapcar (Qcdr, Vbuffer_alist);
 
-  if (FRAMEP (frame))
+
+    if (FRAMEP (frame))
     {
-      Lisp_Object framelist, prevlist, tail;
+        Lisp_Object framelist, prevlist, tail;
 
-      framelist = Fcopy_sequence (XFRAME (frame)->buffer_list);
-      prevlist = Fnreverse (Fcopy_sequence
-			    (XFRAME (frame)->buried_buffer_list));
+        framelist = Fcopy_sequence (XFRAME (frame)->buffer_list);
+        prevlist = Fnreverse (Fcopy_sequence
+                              (XFRAME (frame)->buried_buffer_list));
 
-      /* Remove from GENERAL any buffer that duplicates one in
+        /* Remove from GENERAL any buffer that duplicates one in
          FRAMELIST or PREVLIST.  */
-      tail = framelist;
-      while (CONSP (tail))
-	{
-	  general = Fdelq (XCAR (tail), general);
-	  tail = XCDR (tail);
-	}
-      tail = prevlist;
-      while (CONSP (tail))
-	{
-	  general = Fdelq (XCAR (tail), general);
-	  tail = XCDR (tail);
-	}
+        tail = framelist;
+        while (CONSP (tail))
+        {
+            general = Fdelq (XCAR (tail), general);
+            tail = XCDR (tail);
+        }
+        tail = prevlist;
+        while (CONSP (tail))
+        {
+            general = Fdelq (XCAR (tail), general);
+            tail = XCDR (tail);
+        }
 
-      return CALLN (Fnconc, framelist, general, prevlist);
+        return CALLN (Fnconc, framelist, general, prevlist);
     }
-  else
-    return general;
+    else
+        return general;
 }
 
 /* Like Fassoc, but use Fstring_equal to compare
@@ -1938,6 +1941,7 @@ DEFUN ("bury-buffer-internal", Fbury_buffer_internal, Sbury_buffer_internal,
        doc: /* Move BUFFER to the end of the buffer list.  */)
   (Lisp_Object buffer)
 {
+    debug_print(buffer);
   Lisp_Object aelt, aelt_cons, tem;
   register struct frame *f = XFRAME (selected_frame);
 

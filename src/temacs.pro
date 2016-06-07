@@ -5,13 +5,14 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-QMAKE_POST_LINK=./temacs --batch --load loadup bootstrap;rm -f temacs; mv emacs temacs
+DESTDIR+=../
+QMAKE_POST_LINK=pwd;cd ../; pwd; ./temacs --batch --load loadup bootstrap;rm -f temacs; mv emacs temacs
 
 QMAKE_CFLAGS+=-std=gnu11 -c -g3   -Demacs
 QMAKE_CFLAGS+=-Wl,-znocombreloc
 
 LIBS +=-L/usr/lib/ -L/usr/local/lib/ -ldl  -ltiff -ljpeg -lpng12 -lgif -lXpm -lgtk-3 -lgdk-3 -latk-1.0 -lgio-2.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo-gobject -lpango-1.0 -lcairo -lgobject-2.0 -lglib-2.0   -lSM -lICE -lX11 -lX11-xcb -lxcb -lXrender -lXft   -lasound          -lrt -ldbus-1    -lXrandr   -lXinerama   -lXfixes   -lxml2       -ltinfo  -lgio-2.0 -lgobject-2.0 -lglib-2.0   -lgobject-2.0 -lglib-2.0   -lselinux -lfreetype   -lfontconfig -lfreetype     -lgnutls   -lpthread  -lm -lz
-LIBS += ../debug/libgnu.a 
+LIBS += ../libgnu.a
 
 INCLUDEPATH +=../src/
 INCLUDEPATH +=../lib/

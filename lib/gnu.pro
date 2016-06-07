@@ -2,8 +2,9 @@ TARGET = gnu
   TEMPLATE = lib
   CONFIG          += static
 INCLUDEPATH +=../src/
-DESTDIR = ../debug/
 QMAKE_CFLAGS+= -std=gnu11 -DHAVE_CONFIG_H  -g3 -O2
+
+DESTDIR+=../
 
 HEADERS += \
 acl.h \
