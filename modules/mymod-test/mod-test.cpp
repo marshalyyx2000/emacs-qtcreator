@@ -58,6 +58,16 @@ Fmod_test_return_t (emacs_env *env, ptrdiff_t nargs, emacs_value args[],
 static intmax_t
 sum (intmax_t a, intmax_t b)
 {
+
+    std::string s = "who,lives:in-a,pineapple under the sea?";
+
+    boost::regex re(",|:|-|\\s+");
+    boost::sregex_token_iterator   p(s.begin( ), s.end( ), re, -1);
+    boost::sregex_token_iterator end;
+
+    while (p != end)
+        std::cout << *p++ << '\n';
+
   return a + b;
 }
 

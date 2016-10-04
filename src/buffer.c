@@ -383,8 +383,8 @@ proper order for that frame: the buffers show in FRAME come first,
 followed by the rest of the buffers.  */)
   (Lisp_Object frame)
 {
-    debug_print(frame);
-    debug_print(Vbuffer_alist);
+    /* debug_print(frame); */
+    /* debug_print(Vbuffer_alist); */
     Lisp_Object general;
     general = Fmapcar (Qcdr, Vbuffer_alist);
 
@@ -1941,7 +1941,7 @@ DEFUN ("bury-buffer-internal", Fbury_buffer_internal, Sbury_buffer_internal,
        doc: /* Move BUFFER to the end of the buffer list.  */)
   (Lisp_Object buffer)
 {
-    debug_print(buffer);
+    /* debug_print(buffer); */
   Lisp_Object aelt, aelt_cons, tem;
   register struct frame *f = XFRAME (selected_frame);
 

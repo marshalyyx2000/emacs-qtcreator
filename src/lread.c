@@ -959,12 +959,12 @@ required.
 This uses the variables `load-suffixes' and `load-file-rep-suffixes'.  */)
   (void)
 {
-    debug_print(Vload_suffixes);
+    /* debug_print(Vload_suffixes); */
   Lisp_Object lst = Qnil, suffixes = Vload_suffixes, suffix, ext;
   while (CONSP (suffixes))
     {
       Lisp_Object exts = Vload_file_rep_suffixes;
-      debug_print(exts);
+      /* debug_print(exts); */
       suffix = XCAR (suffixes);
       suffixes = XCDR (suffixes);
       while (CONSP (exts))
@@ -4166,7 +4166,9 @@ load_path_check (Lisp_Object lpath)
       dirfile = Fcar (path_tail);
       if (STRINGP (dirfile))
         {
+          debug_print( dirfile);
           dirfile = Fdirectory_file_name (dirfile);
+          debug_print( dirfile);
           if (! file_accessible_directory_p (dirfile))
             dir_warning ("Lisp directory", XCAR (path_tail));
         }
@@ -4327,6 +4329,8 @@ load_path_default (void)
          be necessary, since in out of tree builds lisp/ is empty, save
          for Makefile.  */
       lpath = decode_env_path (0, normal, 0);
+      debug_print(lpath);
+
     }
 #endif /* !CANNOT_DUMP */
 
@@ -4348,6 +4352,7 @@ init_lread (void)
   if (use_loadpath && egetenv ("EMACSLOADPATH"))
     {
       Vload_path = decode_env_path ("EMACSLOADPATH", 0, 1);
+      debug_print(Vload_path);
 
       /* Check (non-nil) user-supplied elements.  */
       load_path_check (Vload_path);
@@ -4385,7 +4390,10 @@ init_lread (void)
     }
   else
     {
+       debug_print(Vload_path);
       Vload_path = load_path_default ();
+      debug_print(Vload_path);
+
 
       /* Check before adding site-lisp directories.
          The install should have created them, but they are not

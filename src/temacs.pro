@@ -10,8 +10,12 @@ QMAKE_POST_LINK=pwd;cd ../; pwd; ./temacs --batch --load loadup bootstrap;rm -f 
 
 QMAKE_CFLAGS+=-std=gnu11 -c -g3   -Demacs
 QMAKE_CFLAGS+=-Wl,-znocombreloc
+QMAKE_CFLAGS+=-fopenmp
 
-LIBS +=-L/usr/lib/ -L/usr/local/lib/ -ldl  -ltiff -ljpeg -lpng12 -lgif -lXpm -lgtk-3 -lgdk-3 -latk-1.0 -lgio-2.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo-gobject -lpango-1.0 -lcairo -lgobject-2.0 -lglib-2.0   -lSM -lICE -lX11 -lX11-xcb -lxcb -lXrender -lXft   -lasound          -lrt -ldbus-1    -lXrandr   -lXinerama   -lXfixes   -lxml2       -ltinfo  -lgio-2.0 -lgobject-2.0 -lglib-2.0   -lgobject-2.0 -lglib-2.0   -lselinux -lfreetype   -lfontconfig -lfreetype     -lgnutls   -lpthread  -lm -lz
+LIBS +=-L/usr/lib/ -L/usr/local/lib/ -ldl  -ltiff -ljpeg -lpng12 -lgif -lXpm -lgtk-3 -lgdk-3 -latk-1.0 -lgio-2.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo-gobject -lpango-1.0 -lcairo -lgobject-2.0 -lglib-2.0   -lSM -lICE -lX11 -lX11-xcb -lxcb -lXrender -lXft   -lasound          -lrt -ldbus-1    -lXrandr   -lXinerama   -lXfixes   -lxml2       -ltinfo  -lgio-2.0 -lgobject-2.0 -lglib-2.0   -lgobject-2.0 -lglib-2.0   -lselinux -lfreetype   -lfontconfig -lfreetype     -lgnutls   -lpthread  -lm -lz  -lMagickWand -lMagickCore
+
+#LIBS += -lwebkitgtk-3.0 -lgtk-3 -lsoup-2.4 -ljavascriptcoregtk-3.0
+
 LIBS += ../libgnu.a
 
 INCLUDEPATH +=../src/
@@ -42,6 +46,20 @@ INCLUDEPATH +=/usr/lib/x86_64-linux-gnu/glib-2.0/include
 INCLUDEPATH +=/usr/include/freetype2
 INCLUDEPATH +=/usr/include/freetype2
 INCLUDEPATH +=/usr/include/p11-kit-1
+INCLUDEPATH +=/usr/include/ImageMagick
+#INCLUDEPATH +=/usr/include/webkitgtk-3.0
+#INCLUDEPATH +=/usr/include/libsoup-2.4
+
+
+
+
+
+
+
+
+
+
+
 
 HEADERS += \
 atimer.h \

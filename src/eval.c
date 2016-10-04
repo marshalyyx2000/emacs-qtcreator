@@ -1962,6 +1962,7 @@ it defines a macro.  */)
 
   if (NILP (funname))
     return Qnil;
+
   else
     {
       Lisp_Object fun = Findirect_function (funname, Qnil);
@@ -1982,8 +1983,7 @@ LEXICAL can also be an actual lexical environment, in the form of an
 alist mapping symbols to their value.  */)
   (Lisp_Object form, Lisp_Object lexical)
 {
-    int tt = 0;
-    int kk = tt + tt;
+  //  debug_print(form);
   ptrdiff_t count = SPECPDL_INDEX ();
   specbind (Qinternal_interpreter_environment,
 	    CONSP (lexical) || NILP (lexical) ? lexical : list1 (Qt));

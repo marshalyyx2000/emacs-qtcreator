@@ -2026,13 +2026,13 @@ usage: (format-time-string FORMAT-STRING &optional TIME ZONE)  */)
   struct tm tm;
 
   CHECK_STRING (format_string);
-  debug_print(format_string);
+  /* debug_print(format_string); */
   format_string = code_convert_string_norecord (format_string,
 						Vlocale_coding_system, 1);
-  debug_print(format_string);
+  /* debug_print(format_string); */
   Lisp_Object ret = format_time_string (SSDATA (format_string), SBYTES (format_string),
 			     t, zone, &tm);
-   debug_print(ret);
+   /* debug_print(ret); */
   return ret;
 }
 

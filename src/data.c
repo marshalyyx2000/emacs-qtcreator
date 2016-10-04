@@ -2153,9 +2153,9 @@ function chain of symbols.  */)
 {
   Lisp_Object result;
 
-  debug_print(object);
-  debug_print(noerror);
-  debug_print(Qexternal_debugging_output);
+  /* debug_print(object); */
+  /* debug_print(noerror); */
+  /* debug_print(Qexternal_debugging_output); */
 
   /* Optimize for no indirection.  */
   result = object;

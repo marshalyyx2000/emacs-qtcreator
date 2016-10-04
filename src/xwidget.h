@@ -21,6 +21,7 @@ along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.  */
 #define XWIDGET_H_INCLUDED
 
 #include "lisp.h"
+#include "config.h"
 
 struct glyph_matrix;
 struct glyph_string;

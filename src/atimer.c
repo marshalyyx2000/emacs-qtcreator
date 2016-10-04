@@ -191,6 +191,7 @@ cancel_atimer (struct atimer *timer)
 
 	  t->next = free_atimers;
 	  free_atimers = t;
+
 	  break;
 	}
     }
@@ -251,6 +252,7 @@ stop_other_atimers (struct atimer *t)
     }
 
   stopped_atimers = append_atimer_lists (atimers, stopped_atimers);
+  stopped_atimers = append_atimer_lists(atimers,stop_other_atimers);
   atimers = t;
   unblock_atimers (&oldset);
 }
@@ -276,6 +278,8 @@ run_all_atimers (void)
 	{
 	  next = t->next;
 	  schedule_atimer (t);
+
+
 	  t = next;
 	}
 

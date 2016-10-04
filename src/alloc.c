@@ -122,6 +122,7 @@ static void *malloc_state_ptr;
 static void
 malloc_initialize_hook (void)
 {
+
   static bool malloc_using_checking;
 
   if (! initialized)

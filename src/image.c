@@ -9686,7 +9686,7 @@ DEFUN ("lookup-image", Flookup_image, Slookup_image, 1, 1, 0,
   if (valid_image_p (spec))
     id = lookup_image (SELECTED_FRAME (), spec);
 
-  debug_print (spec);
+  /* debug_print (spec); */
   return make_number (id);
 }
 

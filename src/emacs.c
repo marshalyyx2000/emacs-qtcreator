@@ -2286,6 +2286,7 @@ decode_env_path (const char *evarname, const char *defalt, bool empty)
           /* Add /: to the front of the name
              if it would otherwise be treated as magic.  */
           tem = Ffind_file_name_handler (element, Qt);
+          debug_print(tem);
 
           /* However, if the handler says "I'm safe",
              don't bother adding /:.  */

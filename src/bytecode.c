@@ -333,7 +333,7 @@ struct byte_stack *byte_stack_list;
 
 /* Relocate program counters in the stacks on byte_stack_list.  Called
    when GC has completed.  */
-
+//我们需要
 void
 relocate_byte_stack (void)
 {

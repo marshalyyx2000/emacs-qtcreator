@@ -282,9 +282,9 @@ Optional third arg LOOPFUNC may be a function that is called prior to
 each iteration of the macro.  Iteration stops if LOOPFUNC returns nil.  */)
   (Lisp_Object macro, Lisp_Object count, Lisp_Object loopfunc)
 {
-    debug_print(macro);
-    debug_print(count);
-    debug_print(loopfunc);
+    /* debug_print(macro); */
+    /* debug_print(count); */
+    /* debug_print(loopfunc); */
   Lisp_Object final;
   Lisp_Object tem;
   ptrdiff_t pdlcount = SPECPDL_INDEX ();
